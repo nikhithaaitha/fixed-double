@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Sharing Platform</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f0c7f7; }
+  .header { background: #ffb3fc; padding: 10px 0; text-align: center; }
+  .header button { margin: 0 10px; padding: 10px; background: #6200ea; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  .footer { background: #ffb3fc; color: #333; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; }
+  .content { padding: 20px; text-align: center; }
+  h1, h2 { color: #333; }
+  label { margin-top: 10px; display: block; color: #333; }
+  input, select, textarea { margin-bottom: 20px; padding: 10px; width: calc(100% - 22px); border: 1px solid #ccc; border-radius: 5px; }
+  .recipe-image { max-width: 100%; height: auto; margin: 20px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <button onclick="document.location='#home'">Home</button>
+  <button onclick="document.location='#cuisines'">Cuisines</button>
+  <button onclick="document.location='#share'">Share a Recipe</button>
+</div>
+
+<div id="home" class="content">
+  <h1>Welcome to the Recipe Sharing Platform</h1>
+  <img src="recipe-image.jpg" alt="Recipe Sharing" class="recipe-image">
+  <p>Discover and share recipes from different cuisines around the world.</p>
+</div>
+
+<div id="cuisines" class="content">
+  <h2>Different Cuisines</h2>
+  <!-- Add content related to different cuisines here -->
+</div>
+
+<div id="share" class="content">
+  <h2>Share Your Recipe</h2>
+  <form id="recipeForm">
+    <label for="name">Recipe Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="cuisine">Cuisine:</label>
+    <select id="cuisine" name="cuisine">
+      <option value="italian">Italian</option>
+      <option value="mexican">Mexican</option>
+      <option value="indian">Indian</option>
+      <!-- Add more options as needed -->
+    </select>
+    
+    <label for="recipe">Recipe:</label>
+    <textarea id="recipe" name="recipe" rows="5" required></textarea>
+    
+    <button type="submit">Submit Recipe</button>
+  </form>
+</div>
+
+<div class="footer">
+  © 2023 Recipe Sharing Platform. All rights reserved.
+</div>
+
+<script>
+document.getElementById('recipeForm').addEventListener('submit', function(event){
+  event.preventDefault();
+  alert('Thank you for sharing your recipe!');
+});
+</script>
+
+</body>
+</html>
